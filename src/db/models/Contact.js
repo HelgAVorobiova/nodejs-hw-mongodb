@@ -29,8 +29,8 @@ const contactSchema = new Schema(
   { versionKey: false, timestamps: true },
 );
 contactSchema.post("save", handleSaveError);
-contactSchema.pre("findOneAndUpdate", setUpdateSettings );
-contactSchema.post('findOneAndUpdate', handleSaveError);
+contactSchema.pre('findByIdAndUpdate', setUpdateSettings);
+contactSchema.post('findByIdAndUpdate', handleSaveError);
 export const contactSortFields = [
   'name',
   'phoneNumber',
