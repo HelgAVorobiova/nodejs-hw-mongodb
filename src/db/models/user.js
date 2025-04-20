@@ -22,8 +22,8 @@ const userShema = new Schema(
   { timestamps: true, versionKey: false },
 );
 userShema.post('save', handleSaveError);
-userShema.pre('findByIdAndUpdate', setUpdateSettings);
-userShema.post('findByIdAndUpdate', handleSaveError);
+userShema.pre('findOneAndUpdate', setUpdateSettings);
+userShema.post('findOneAndUpdate', handleSaveError);
 
 const UsersCollection = model('users', userShema);
 export default UsersCollection;

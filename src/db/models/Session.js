@@ -28,8 +28,8 @@ const sessionShema = new Schema(
   { timestamps: true, versionKey: false },
 );
 sessionShema.post('save', handleSaveError);
-sessionShema.pre('findByIdAndUpdate', setUpdateSettings);
-sessionShema.post('findByIdAndUpdate', handleSaveError);
+sessionShema.pre('findOneAndUpdate', setUpdateSettings);
+sessionShema.post('findOneAndUpdate', handleSaveError);
 
 const SessionCollection = model('session', sessionShema);
 export default SessionCollection;

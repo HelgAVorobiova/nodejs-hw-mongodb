@@ -75,5 +75,5 @@ export const refreshUser = async ({ refreshToken, sessionId }) => {
 };
 
 export const logoutUser = (sessionId) => {
-  SessionCollection.deleteOne({ _id: sessionId });
+ return SessionCollection.deleteOne({ _id: sessionId });
 };
