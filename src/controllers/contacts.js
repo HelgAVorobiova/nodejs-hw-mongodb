@@ -94,7 +94,7 @@ const result = await updateContact(contactId, req.user._id, {
   res.json({
     status: 200,
     message: 'Successfully patched a contact!',
-    result,
+    data: result.data,
   });
 };
 
