@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 
 import contactsRouter from './routers/contacts.js';
+import { swaggerDocs } from './middlewares/swaggerDocs.js';
 import { getEnvVar } from './utils/getEnvVar.js';
 import authRouter from './routers/auth.js';
 import { logger } from './middlewares/logger.js';
@@ -19,6 +20,7 @@ export const setupServer = () => {
   app.use(logger);
   app.use('/auth', authRouter);
   app.use('/contacts', contactsRouter);
+  app.use('/api-docs', swaggerDocs());
 
   app.get('/', (req, res) => {
     res.json({
