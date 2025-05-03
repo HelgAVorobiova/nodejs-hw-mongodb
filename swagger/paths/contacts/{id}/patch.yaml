@@ -11,7 +11,7 @@ parameters:
     required: true
     schema:
       type: string
-    description: The contact ID
+      description: The contact ID
 requestBody:
   content:
     multipart/form-data:

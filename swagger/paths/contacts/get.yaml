@@ -97,5 +97,4 @@ responses:
                   example: true
   '401':
     $ref: '../../components/responses/401.yaml'
-  '404':
-    description: 'Contacts not found or no contacts match the filter criteria'
+ 
